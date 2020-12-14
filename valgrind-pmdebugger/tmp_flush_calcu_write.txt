@@ -1,0 +1,17 @@
+-1.1, a simple persistent store checker 1
+==17933== Copyright (c) 2014-2016, Intel Corporation 1
+==17933== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info 1
+==17933== Command: ./src/benchmarks/pmembench map_insert -f /dev/shm/testfile -d 128 -s 2385006593 -n 1024 -t 2 -r 10 -T btree 1
+==17933==  1
+==17933== memory_add: 0x100001000ff0 memory_max: 0x100001000ff8 0 distance:1
+==17933== flush_add: 0x100001000000 flush_max: 0x100001000ff8 1 distance:
+==17933== memory_add: 0x100001000fc0 memory_max: 0x100001000fc8 0 distance:1
+==17933== flush_add: 0x100001000000 flush_max: 0x100001000ff8 1 distance:
+==17933== memory_add: 0x100001000ff0 memory_max: 0x100001000ff8 0 distance:1
+==17933== flush_add: 0x100001000000 flush_max: 0x100001000ff8 1 distance:
+==17933== memory_add: 0x100001000fc8 memory_max: 0x100001000fc9 0 distance:1
+==17933== flush_add: 0x100001000000 flush_max: 0x100001000ff8 1 distance:
+==17933== memory_add: 0x100001000ff0 memory_max: 0x100001000ff8 0 distance:1
+==17933== flush_add: 0x100001000000 flush_max: 0x100001000ff8 1 distance:
+==17933== memory_add: 0x100001000ff8 memory_max: 0x100001001000 0 distance:1
+==17933== flush_add: 0x100001000000 flush_max: 0x100001001000 1 distance:
