@@ -121,7 +121,7 @@ We choose `Pmemcheck` for comparison, because it is an industry-quality detector
 Use script `pmdk/run.sh` to run all those benchmarks. The usage is shown as follows. 
 ```
 Usage: ./run.sh <CHECKER> <INPUTSIZE> <WORKLOAD>
-       CHECKER:   Debugger tool name (pmdebugger or pmemcheck).
+       CHECKER:   Debugger tool name (pmdebugger, pmemcheck, Nulgrind, and original). "original" represents original program with detector disabled.
        INPUTSIZE: The number of data insertions.
        WORKLOAD:  The workload to be tested.
 ```
@@ -135,7 +135,7 @@ $ ./run.sh pmdebugger 1024 btree
 Use script `redis/run.sh` to run the Redis example. The usage is shown as follows.
 ```
 Usage: ./run.sh <CHECKER> <INPUTSIZE>
-       CHECKER:   Debugger tool name (pmdebugger or pmemcheck).
+       CHECKER:    Debugger tool name (pmdebugger, pmemcheck, Nulgrind, and original). "original" represents original program with detector disabled.
        INPUTSIZE: The number of LRU tests.
 ```
 For example, we use `100000` LRU tests in Redis to evaluate the performance of `PMDebugger`,  so we can run the following command:
@@ -148,7 +148,7 @@ $ ./run.sh pmdebugger 100000
 We use memslap in [WHISPER](https://github.com/swapnilh/whisper) to run Memcached. You can use the script `memslap/run.sh` to run Memcached examples. The usage is shown as follows.
 ```
 Usage: ./run.sh <CHECKER> <INPUTSIZE>
-       CHECKER:   Debugger tool name (pmdebugger or pmemcheck).
+       CHECKER:    Debugger tool name (pmdebugger, pmemcheck, Nulgrind, and original). "original" represents original program with detector disabled.
        INPUTSIZE: The number of operations to execute.
 ```
 For example, we execute `10000` operations in Memcached to evaluate the performance of `PMDebugger`,  so we can run the following command:
