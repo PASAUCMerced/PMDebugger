@@ -129,7 +129,7 @@ For example,  we insert `1024` elements in `btree` to evaluate the performance o
 ```
 $ ./run.sh pmdebugger 1024 btree
 ```
-**Output:** PMDebugger reports all detected bugs (if any) after a test is complete. PMDK benchmarks report the execution time (i.e., `total-avg`).
+**What to look at:** PMDebugger reports all detected bugs (if any) after a test is complete. PMDK benchmarks report the execution time (i.e., `total-avg`).
 
 #### Redis
 Use script `redis/run.sh` to run the Redis example. The usage is shown as follows.
@@ -142,7 +142,7 @@ For example, we use `100000` LRU tests in Redis to evaluate the performance of `
 ```
 $ ./run.sh pmdebugger 100000
 ```
-**Output:** PMDebugger reports all detected bugs (if any) after a test is complete. Redis benchmarks report the throughput (i.e., `Gets/sec`).
+**What to look at:** PMDebugger reports all detected bugs (if any) after a test is complete. Redis benchmarks report the throughput (i.e., `Gets/sec`).
 
 #### Memcached
 We use memslap in [WHISPER](https://github.com/swapnilh/whisper) to run Memcached. You can use the script `memslap/run.sh` to run Memcached examples. The usage is shown as follows.
@@ -155,7 +155,7 @@ For example, we execute `10000` operations in Memcached to evaluate the performa
 ```
 $ ./run.sh pmdebugger 10000
 ```
-**Output:** PMDebugger reports all detected bugs (if any) after a test is complete. Memcached benchmarks report the execution time (i.e., `Run time:`).
+**What to look at:** PMDebugger reports all detected bugs (if any) after a test is complete. Memcached benchmarks report the execution time (i.e., `Run time:`).
 
 ### Bug Detection Capability
 We implement `9` rules in PMDebugger to detect bugs. To verify its capability of bug detection,  we integrate those bug cases into Valgrind. Those bug cases are in `valgrind-pmdebugger/pmdebugger/tests` folder and classified by their bug type.
