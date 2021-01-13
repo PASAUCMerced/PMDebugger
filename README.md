@@ -101,7 +101,7 @@ $ make
 ```
 
 ## Evaluation
-After building the PMDebugger suite, we can start testing performance and reproducing bugs.
+After building the PMDebugger suite, we can start testing performance and reproducing bugs. **Note that you can directly get results (Figure 8 and Table 5) out of box. Please see [here](https://github.com/PASAUCMerced/PMDebugger/blob/master/README_performance_reproduce.md).**
 
 ### Performance
 Tests for the following programs are available in PMDebugger:
@@ -157,6 +157,19 @@ $ ./run.sh pmdebugger 10000
 ```
 **What to look at:** PMDebugger reports all detected bugs (if any) after a test is complete. Memcached benchmarks report the execution time (i.e., `Run time:`).
 
+#### Simplified performance scripts
+
+I simplify the output of the above version (`run.sh`) and you can directly get the result (such as the execution and the throughput). You only require to replace `run.sh` with `brief_run.sh`. For example, we use `100000` LRU tests in Redis to evaluate the performance of `PMDebugger`, so we can run the following command:
+
+```
+$ cd redis
+$ ./brief_run.sh pmdebugger 10000
+```
+**Output:** It directly output the result like
+```
+throughput (Get/Sec)
+16355.3
+```
 ### Bug Detection Capability
 We implement `9` rules in PMDebugger to detect bugs. To verify its capability of bug detection,  we integrate those bug cases into Valgrind. Those bug cases are in `valgrind-pmdebugger/pmdebugger/tests` folder and classified by their bug type.
 
@@ -177,6 +190,29 @@ We can simply run the following command to verify bug detection capability:
 $ cd <PMDebugger Root>/valgrind-pmdebugger
 $ perl tests/vg_regtest pmdebugger
 ```
+
+#### What to look at
+After you run the command `perl tests/vg_regtest pmdebugger`, you can see something like the follow.
+```
+1 ...
+2 -- Running  tests in pmdebugger/tests/redundant_flush ------------------
+3 redundant_flush1: valgrind   --print-debug-detail=yes --isa-rec=no -q --flush-check=yes --flush-align=yes ./redundant_flush1 
+4 redundant_flush2: valgrind   --print-debug-detail=yes -q --flush-check=yes --flush-align=yes ./redundant_flush2 
+5 -- Finished tests in pmdebugger/tests/redundant_flush ------------------
+6 ...
+7 == 58 tests, 0 stderr failures, 0 stdout failures, 0 stderrB failures, 0 stdoutB failures, 0 post failures ==
+```
+
+In brief, You can directly look at the last row of the output (**Line 7**):
+- `58 tests`: showing a total number of bugs in this bug suite.
+- `stderr failures`, `stdout failures`, `stderrB failures`, `stdoutB` and `post failures`: showing the number of detection failures in different cases. So debugging tool passes the examination if all these cases are 0.
+
+For more detail, you can see **Line 2 to Line 5**. 
+- `pmdebugger/tests/redundant_flush` : showing bug type is `redundant_flush`. There are total nine bug types.
+- `redundant_flush1` and `redundant_flush2`: showing names of benchmark
+- `valgrind   --print-debug-detail=yes -q --flush-check=yes --flush-align=yes ./redundant_flush1 `: showing  how to detect `redundant_flush1` by PMDebugger. 
+
+In addition, there are total 10 snippets like above in the output (one for function tests and nine for validating bug detection rules)
 
 ### New Bugs Found By PMDebugger
 PMDebugger finds `19` new bugs in Memcached and `two` new bugs (confirmed by PMDK[[1]](https://github.com/pmem/pmdk/pull/4939/commits/e394307ef2baea1de31fa054a1e2c3dff3581a59)[[2]](https://github.com/pmem/pmdk/issues/4927)) in PMDK. These bugs were not reported before. We provide scripts to reproduce these bugs.
