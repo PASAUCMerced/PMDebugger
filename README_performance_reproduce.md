@@ -1,4 +1,4 @@
-## How to get results in Figure 8
+## How to Get Results in Figure 8
 
 ### PMDK (Figure 8(a) -- Figure 8(f))
 ```
@@ -15,7 +15,7 @@ $ ./figure_8.sh pmdebugger 1000 btree
 
 ### memcached (Figure 8(g))
 ```
-$ cd memcached/performance_reproduce
+$ cd memslap/performance_reproduce
 $ ./figure_8.sh <CHECKER> <INPUTSIZE>
        CHECKER:   Debugger tool name (pmdebugger, pmemcheck, Nulgrind).
        INPUTSIZE: The number of data insertions.
@@ -37,7 +37,7 @@ For example, we want to get the result of PMDebugger with 100K keys in Figure 8(
 $ ./figure_8.sh pmdebugger 100000 
 ```
 
-## How to get results in Table 5
+## How to Get Results in Table 5
 ### PMDK (btree -- synth_strand)
 ```
 $ cd pmdk/performance_reproduce
@@ -51,7 +51,7 @@ $ ./table_5.sh btree with_instr
 ```
 ### memcached
 ```
-$ cd memcached/performance_reproduce
+$ cd memslap/performance_reproduce
 $ ./table_5.sh <WITH/WITHOUT INSTRUMENTATION>
        <WITH/WITHOUT INSTRUMENTATION>: Including instrumentation time or not (with_instr or without_instr).
 ```
