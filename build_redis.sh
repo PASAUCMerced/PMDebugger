@@ -14,4 +14,5 @@ echo "***************** Make redis *********************"
 
 make USE_PMDK=yes STD=-std=gnu99 -j
 cp ../redis_run.sh  run.sh
+cp ../redis_brief_run.sh brief_run.sh
 cp ../redis.conf ./

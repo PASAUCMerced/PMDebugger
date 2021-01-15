@@ -44,7 +44,7 @@ The following is a list of software dependencies for PMDebugger and workloads  (
 * OS: Ubuntu 18.04, Linux kernel 5.0.   
 * Compiler: g++/gcc-9.2.
 * Tool: Valgrind-3.15.
-* Dependent libraries: libevent, libseccomp, autoconf, pkg-config, libndctl-devel (v63 or later), libdaxctl-devel (v63 or later).
+* Dependent libraries: libevent, libfabric, libseccomp, autoconf, pkg-config, libndctl-devel (v63 or later), libdaxctl-devel (v63 or later). They may require  `sudo` privilege (such as `sudo apt-get install xxx`).
 
 ## Installation
 This repository is organized as the following structure:
