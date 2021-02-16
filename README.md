@@ -229,7 +229,3 @@ $ valgrind --tool=pmdebugger ./WORKLOAD
 For more details, please run `valgrind --tool=pmdebugger -h`.
 
 For other workloads, you firstly require to insert annotations, such as `epoch_begin (VALGRIND_PMC_EPOCH_BEGIN)` and `epoch_end (VALGRIND_PMC_EPOCH_END)`. Then, after recompiling workloads, you can debug them in the above way. Note that these annotations can be inserted into low_level API and achieve automatic annotation. For example, we insert `epoch_begin` and `epoch_end` in PMDK's `TX_BEGIN` and `TX_END` to achieve automatic annotation.
-
-## Note
-If you have any question when building our artifact, please contact Bang Di (<dibang@hnu.edu.cn>).  if you want a real PM system to evaluate our artifact, please contact Jiawen Liu (Jiawen Liu, <jliu265@ucmerced.edu>). We have prepared a system with Intel Optane DC persistent memory module for evaluation.
-
