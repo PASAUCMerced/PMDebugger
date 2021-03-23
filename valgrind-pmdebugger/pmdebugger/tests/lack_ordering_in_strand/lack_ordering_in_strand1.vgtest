@@ -1,0 +1,3 @@
+prog: lack_ordering_in_strand1
+vgopts: --print-debug-detail=yes --isa-rec=no --order-guarantee=yes --lack-ordering-in-strand=yes -q 
+

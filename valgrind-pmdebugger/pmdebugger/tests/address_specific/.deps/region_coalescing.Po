@@ -1,0 +1,11 @@
+region_coalescing.o: region_coalescing.c /usr/include/stdc-predef.h \
+ ../../pmdebugger.h ../../../include/valgrind.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h
+
+/usr/include/stdc-predef.h:
+
+../../pmdebugger.h:
+
+../../../include/valgrind.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:

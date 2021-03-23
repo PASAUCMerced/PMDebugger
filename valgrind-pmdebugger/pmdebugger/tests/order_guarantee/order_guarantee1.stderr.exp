@@ -1,0 +1,6 @@
+Not order guarantee: 
+   at 0x........: main (order_guarantee1.c:15)
+   at 0x........: main (order_guarantee1.c:16)
+	First Address: 0x........	First size: 64	Second Address: 0x........	Second size: 64
+Number of stores not made persistent: 0
+ERROR SUMMARY: 1 errors

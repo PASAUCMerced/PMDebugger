@@ -1,0 +1,2 @@
+prog: isa_check
+vgopts: --print-debug-detail=yes -q --flush-check=yes --flush-align=yes

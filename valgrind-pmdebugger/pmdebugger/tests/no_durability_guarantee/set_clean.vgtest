@@ -1,0 +1,2 @@
+prog: set_clean
+vgopts: --print-debug-detail=yes --isa-rec=no -q --print-summary=no

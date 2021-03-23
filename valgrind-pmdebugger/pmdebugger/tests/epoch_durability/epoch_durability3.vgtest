@@ -1,0 +1,4 @@
+prog: epoch_durability3
+vgopts: --print-debug-detail=yes --isa-rec=no --epoch-durabiliy-fence=yes -q
+
+

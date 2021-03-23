@@ -1,0 +1,33 @@
+Number of stores not made persistent: 1
+Stores not made persistent properly:
+[0]    at 0x........: main (redundant_logging2.c:21)
+	Address: 0x........	size: 1	state: DIRTY
+Total memory not made persistent: 1
+
+Number of overlapping regions registered in a same transactions: 1
+Overlapping regions:
+[0]    at 0x........: main (redundant_logging2.c:17)
+	Address: 0x........	size: 2	tx_id: ...
+   First registered here:
+[0]'   at 0x........: main (redundant_logging2.c:16)
+	Address: 0x........	size: 2	tx_id: ...
+
+Number of active transactions: 1
+[0]    at 0x........: main (redundant_logging2.c:14)
+	tx_id: ...	 nesting: 1
+ERROR SUMMARY: 3 errors
+
+Number of stores not made persistent: 1
+Stores not made persistent properly:
+[0]    at 0x........: main (redundant_logging2.c:21)
+	Address: 0x........	size: 1	state: DIRTY
+Total memory not made persistent: 1
+
+Number of overlapping regions registered in a same transactions: 1
+Overlapping regions:
+[0]    at 0x........: main (redundant_logging2.c:17)
+	Address: 0x........	size: 2	tx_id: ...
+   First registered here:
+[0]'   at 0x........: main (redundant_logging2.c:16)
+	Address: 0x........	size: 2	tx_id: ...
+ERROR SUMMARY: 2 errors

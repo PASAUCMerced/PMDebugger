@@ -1,0 +1,24 @@
+Not persistent memory even if the epoch ends: 
+   at 0x........: main (epoch_redundant_fence1.c:19)
+	Address: 0x........	size: 1	state: DIRTY
+Not persistent memory even if the epoch ends: 
+   at 0x........: main (epoch_redundant_fence1.c:22)
+	Address: 0x........	size: 4	state: DIRTY
+Number of stores not made persistent: 3
+Stores not made persistent properly:
+[0]    at 0x........: main (epoch_redundant_fence1.c:19)
+	Address: 0x........	size: 1	state: DIRTY
+[1]    at 0x........: main (epoch_redundant_fence1.c:26)
+	Address: 0x........	size: 2	state: DIRTY
+[2]    at 0x........: main (epoch_redundant_fence1.c:22)
+	Address: 0x........	size: 4	state: DIRTY
+Total memory not made persistent: 7
+
+Number of stores made without adding to transaction: 1
+Stores made without adding to transactions:
+[0]    at 0x........: main (epoch_redundant_fence1.c:22)
+	Address: 0x........	size: 4
+Number of redundantly fence: 2
+[0]    at 0x........: main (epoch_redundant_fence1.c:24)
+[1]    at 0x........: main (epoch_redundant_fence1.c:25)
+ERROR SUMMARY: 8 errors

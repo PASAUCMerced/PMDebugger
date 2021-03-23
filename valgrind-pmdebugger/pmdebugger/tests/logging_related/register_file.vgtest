@@ -1,0 +1,2 @@
+prog: register_file
+vgopts: --print-debug-detail=yes --isa-rec=no -q --log-stores=yes --print-summary=no

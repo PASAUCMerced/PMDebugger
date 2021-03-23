@@ -1,0 +1,2 @@
+prog: multiple_overwrite2
+vgopts: --print-debug-detail=yes --isa-rec=no -q --mult-stores=yes

@@ -1,0 +1,5 @@
+Violating order guarantee because of multi-strands: 
+   at 0x........: main (lack_ordering_in_strand1.c:24)
+	 flush Address: 0x........	flush size: 2
+Number of stores not made persistent: 0
+ERROR SUMMARY: 1 errors

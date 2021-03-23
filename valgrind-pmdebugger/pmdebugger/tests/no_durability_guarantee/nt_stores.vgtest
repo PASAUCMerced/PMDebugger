@@ -1,0 +1,2 @@
+prog: nt_stores
+vgopts: --print-debug-detail=yes --isa-rec=no -q

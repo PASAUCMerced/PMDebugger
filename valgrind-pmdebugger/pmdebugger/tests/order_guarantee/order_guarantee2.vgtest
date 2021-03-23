@@ -1,0 +1,3 @@
+prog: order_guarantee2
+vgopts: --print-debug-detail=yes --isa-rec=no --order-guarantee=yes -q --flush-align=yes
+

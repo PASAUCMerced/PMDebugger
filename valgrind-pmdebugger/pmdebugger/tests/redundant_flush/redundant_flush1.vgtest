@@ -1,0 +1,2 @@
+prog: redundant_flush1
+vgopts: --print-debug-detail=yes --isa-rec=no -q --flush-check=yes --flush-align=yes

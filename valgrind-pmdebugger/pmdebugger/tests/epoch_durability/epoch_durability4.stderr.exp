@@ -1,0 +1,14 @@
+Not persistent memory even if the epoch ends: 
+   at 0x........: main (epoch_durability4.c:20)
+	Address: 0x........	size: 1	state: DIRTY
+Not persistent memory even if the epoch ends: 
+   at 0x........: main (epoch_durability4.c:22)
+	Address: 0x........	size: 2	state: DIRTY
+Number of stores not made persistent: 2
+Stores not made persistent properly:
+[0]    at 0x........: main (epoch_durability4.c:20)
+	Address: 0x........	size: 1	state: DIRTY
+[1]    at 0x........: main (epoch_durability4.c:22)
+	Address: 0x........	size: 2	state: DIRTY
+Total memory not made persistent: 3
+ERROR SUMMARY: 4 errors

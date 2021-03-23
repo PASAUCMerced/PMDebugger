@@ -1,0 +1,2 @@
+prog: flush_align
+vgopts: --isa-rec=no -q --print-summary=no --log-stores=yes

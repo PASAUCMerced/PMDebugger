@@ -1,0 +1,2 @@
+prog: logging
+vgopts: --print-debug-detail=yes --isa-rec=no -q --log-stores=yes --print-summary=no --flush-align=yes

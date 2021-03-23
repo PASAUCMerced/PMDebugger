@@ -1,0 +1,4 @@
+Number of stores not made persistent: 0
+Number of redundantly fence: 1
+[0]    at 0x........: main (epoch_redundant_fence4.c:28)
+ERROR SUMMARY: 1 errors

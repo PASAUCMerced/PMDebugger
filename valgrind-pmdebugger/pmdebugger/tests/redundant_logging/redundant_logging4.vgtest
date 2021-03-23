@@ -1,0 +1,4 @@
+prog: redundant_logging4
+
+vgopts: --print-debug-detail=yes --isa-rec=no --redundant-logging=yes -q
+

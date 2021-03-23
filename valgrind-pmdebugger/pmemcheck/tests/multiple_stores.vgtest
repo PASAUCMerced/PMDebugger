@@ -1,0 +1,2 @@
+prog: multiple_stores
+vgopts: --isa-rec=no -q --mult-stores=yes

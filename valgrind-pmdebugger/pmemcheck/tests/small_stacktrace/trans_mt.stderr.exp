@@ -1,0 +1,41 @@
+Number of stores not made persistent: 4
+Stores not made persistent properly:
+[0]    at 0x........: make_tx (trans_mt.c:37)
+	Address: 0x........	size: 1	state: DIRTY
+[1]    at 0x........: make_tx (trans_mt.c:38)
+	Address: 0x........	size: 2	state: DIRTY
+[2]    at 0x........: make_tx (trans_mt.c:39)
+	Address: 0x........	size: 4	state: DIRTY
+[3]    at 0x........: make_tx (trans_mt.c:40)
+	Address: 0x........	size: 8	state: DIRTY
+Total memory not made persistent: 15
+
+Number of stores made without adding to transaction: 6
+Stores made without adding to transactions:
+[0]    at 0x........: make_tx (trans_mt.c:37)
+	Address: 0x........	size: 1
+[1]    at 0x........: make_tx (trans_mt.c:38)
+	Address: 0x........	size: 2
+[2]    at 0x........: make_tx (trans_mt.c:40)
+	Address: 0x........	size: 8
+[3]    at 0x........: make_tx (trans_mt.c:37)
+	Address: 0x........	size: 1
+[4]    at 0x........: make_tx (trans_mt.c:38)
+	Address: 0x........	size: 2
+[5]    at 0x........: make_tx (trans_mt.c:40)
+	Address: 0x........	size: 8
+
+Number of overlapping regions registered in different transactions: 1
+Overlapping regions:
+[0]    at 0x........: make_tx (trans_mt.c:35)
+	Address: 0x........	size: 4	tx_id: ...
+   First registered here:
+[0]'   at 0x........: make_tx (trans_mt.c:35)
+	Address: 0x........	size: 4	tx_id: ...
+
+Number of active transactions: 2
+[0]    at 0x........: make_tx (trans_mt.c:33)
+	tx_id: ...	 nesting: 1
+[1]    at 0x........: make_tx (trans_mt.c:33)
+	tx_id: ...	 nesting: 1
+ERROR SUMMARY: 13 errors

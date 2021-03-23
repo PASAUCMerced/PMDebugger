@@ -1,0 +1,2 @@
+prog: order_guarantee1
+vgopts: --print-debug-detail=yes --isa-rec=no --order-guarantee=yes -q

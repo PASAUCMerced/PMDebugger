@@ -1,0 +1,29 @@
+Number of stores not made persistent: 4
+Stores not made persistent properly:
+[0]    at 0x........: main (redundant_logging4.c:23)
+	Address: 0x........	size: 1	state: DIRTY
+[1]    at 0x........: main (redundant_logging4.c:24)
+	Address: 0x........	size: 2	state: DIRTY
+[2]    at 0x........: main (redundant_logging4.c:25)
+	Address: 0x........	size: 4	state: DIRTY
+[3]    at 0x........: main (redundant_logging4.c:30)
+	Address: 0x........	size: 8	state: DIRTY
+Total memory not made persistent: 15
+
+Number of stores made without adding to transaction: 3
+Stores made without adding to transactions:
+[0]    at 0x........: main (redundant_logging4.c:23)
+	Address: 0x........	size: 1
+[1]    at 0x........: main (redundant_logging4.c:24)
+	Address: 0x........	size: 2
+[2]    at 0x........: main (redundant_logging4.c:26)
+	Address: 0x........	size: 8
+
+Number of overlapping regions registered in a same transactions: 1
+Overlapping regions:
+[0]    at 0x........: main (redundant_logging4.c:21)
+	Address: 0x........	size: 4	tx_id: ...
+   First registered here:
+[0]'   at 0x........: main (redundant_logging4.c:20)
+	Address: 0x........	size: 4	tx_id: ...
+ERROR SUMMARY: 8 errors

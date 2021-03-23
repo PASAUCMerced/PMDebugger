@@ -1,0 +1,2 @@
+prog: flush_check
+vgopts: --print-debug-detail=yes --isa-rec=no -q --flush-check=yes --flush-align=yes

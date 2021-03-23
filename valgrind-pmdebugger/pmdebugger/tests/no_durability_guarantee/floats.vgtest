@@ -1,0 +1,2 @@
+prog: floats
+vgopts: --print-debug-detail=yes --log-stores=yes --isa-rec=no -q
