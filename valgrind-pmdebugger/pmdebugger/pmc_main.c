@@ -1601,7 +1601,7 @@ void epoch_end(UWord txid)
         for (int i = pmem.array.snippet_info[s_index].start_index; i < pmem.array.snippet_info[s_index].index; i++)
         {
             being_fenced = pmem.array.pmem_stores + i;
-            if (being_fenced->inEpoch)
+            if (being_fenced->inEpoch && being_fenced->is_delete != True)
             {
                 VG_(umsg)
                 ("Not persistent memory even if the epoch ends: \n");
