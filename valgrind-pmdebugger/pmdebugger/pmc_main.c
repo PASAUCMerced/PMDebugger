@@ -153,7 +153,7 @@ static struct pmem_ops
     ExeContext **redundant_fence;
     Bool tree_reorganization;
     Bool redundant_logging;
-    Bool epoch_durabiliy_fence;
+    Bool epoch_durability_fence;
     UWord epoch_durability_reg;
     Bool print_bug_detail;
     Bool order_guarantee;
@@ -2844,7 +2844,7 @@ pmc_handle_client_request(ThreadId tid, UWord *arg, UWord *ret)
     {
 
         register_new_tx(VG_(get_running_tid)());
-        if (pmem.epoch_durabiliy_fence && !is_nest_trans(VG_(get_running_tid)()))
+        if (pmem.epoch_durability_fence && !is_nest_trans(VG_(get_running_tid)()))
             epoch_begin();
         break;
     }
@@ -2852,14 +2852,14 @@ pmc_handle_client_request(ThreadId tid, UWord *arg, UWord *ret)
     case VG_USERREQ__PMC_START_TX_N:
     {
         register_new_tx(arg[1]);
-        if (pmem.epoch_durabiliy_fence && !is_nest_trans(arg[1]))
+        if (pmem.epoch_durability_fence && !is_nest_trans(arg[1]))
             epoch_begin();
         break;
     }
 
     case VG_USERREQ__PMC_END_TX:
     {
-        if (pmem.epoch_durabiliy_fence && !is_nest_trans(VG_(get_running_tid)()))
+        if (pmem.epoch_durability_fence && !is_nest_trans(VG_(get_running_tid)()))
         {
             *ret = remove_tx(VG_(get_running_tid)());
             mark_epoch_fence();
@@ -2874,7 +2874,7 @@ pmc_handle_client_request(ThreadId tid, UWord *arg, UWord *ret)
 
     case VG_USERREQ__PMC_END_TX_N:
     {
-        if (pmem.epoch_durabiliy_fence && !is_nest_trans(arg[1]))
+        if (pmem.epoch_durability_fence && !is_nest_trans(arg[1]))
         {
             *ret = remove_tx(arg[1]);
             mark_epoch_fence();
@@ -2946,14 +2946,14 @@ pmc_handle_client_request(ThreadId tid, UWord *arg, UWord *ret)
 
     case VG_USERREQ__PMC_EPOCH_BEGIN:
     {
-        if (pmem.epoch_durabiliy_fence)
+        if (pmem.epoch_durability_fence)
             epoch_begin();
         break;
     }
 
     case VG_USERREQ__PMC_EPOCH_END:
     {
-        if (pmem.epoch_durabiliy_fence)
+        if (pmem.epoch_durability_fence)
             epoch_end(VG_(get_running_tid)());
         break;
     }
@@ -3134,7 +3134,7 @@ pmc_process_cmd_line_option(const HChar *arg)
     else if VG_BOOL_CLO (arg, "--redundant-logging", pmem.redundant_logging)
     {
     }
-    else if VG_BOOL_CLO (arg, "--epoch-durabiliy-fence", pmem.epoch_durabiliy_fence)
+    else if VG_BOOL_CLO (arg, "--epoch-durability-fence", pmem.epoch_durability_fence)
     {
     }
 
@@ -3274,7 +3274,7 @@ pmc_print_usage(void)
         "                                           default [no]\n"
         "    --redundant-logging=<yes|no>           open detection of redundant logging\n"
         "                                           default [no]\n"
-        "    --epoch-durabiliy-fence=<yes|no>       open detection of redundant fence and lack\n"
+        "    --epoch-durability-fence=<yes|no>       open detection of redundant fence and lack\n"
         "                                           durability in epoch default [no]\n"
         "    --print-debug-detail=<yes|no>          print detail information for detected bugs\n"
         "                                           default [no]\n"
